@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HJManagedImageV.h"
+#import "AppDelegate.h"
 
 @interface MyProfileViewController : UIViewController
+@property (weak, nonatomic) IBOutlet HJManagedImageV *image_profile;
+@property (weak, nonatomic) IBOutlet UILabel *label_name;
+@property (weak, nonatomic) IBOutlet UILabel *label_email;
 
 @end

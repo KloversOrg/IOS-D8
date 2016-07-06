@@ -11,6 +11,9 @@
 #import "HJMOUser.h"
 #import "HJMOHandler.h"
 
+#import <UIKit/UIKit.h>
+
+
 
 /* 
  The managed image view is a UIView subclass that can be used just like any other view, 

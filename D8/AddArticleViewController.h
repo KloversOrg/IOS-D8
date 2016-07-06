@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddArticleViewController : UIViewController
+#import "MBProgressHUD.h"
 
+
+@interface AddArticleViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate>
+
+@property (nonatomic, strong) MBProgressHUD *hud;
+
+@property (weak, nonatomic) IBOutlet UITextField *txtTitle;
+@property (weak, nonatomic) IBOutlet UITextView *txtDetail;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnImage;
+
+
+- (IBAction)onSelectImage:(id)sender;
+- (IBAction)onSave:(id)sender;
 @end

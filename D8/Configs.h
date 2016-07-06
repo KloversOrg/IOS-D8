@@ -11,28 +11,23 @@
 //#import <CoreLocation/CoreLocation.h>
 
 
+
 @interface Configs : NSObject
 
 + (Configs *)sharedInstance;
 
--(BOOL)isIPAD;
+@property(nonatomic) NSString* API_URL, *END_POINT;
 
-//-(CLLocationCoordinate2D) getLocation;
+@property(nonatomic)NSString* USER_LOGIN;
+@property(nonatomic)NSString* USER_REGISTER;
+@property(nonatomic)NSString* USER_LOGOUT;
 
-@property(nonatomic) NSString* API_URL;
-
-/*
-@property(nonatomic) NSString* SLIDE_LASTEST_URL, *LIST_BOOK_LASTEST_URL, *MESSAGE_TABALLNEWS_URL, *MESSAGE_TABNEWSSTEELINDUSTRY_URL, *MESSAGE_TABBUSINESSEWS_URL, *MESSAGE_TABPRESSRELEASES_URL, *STATISTICS_URL, *REPORTANDOTHER_URL, *SUPPORTINGSTEELLNDUSTRY_URL, *SEARCH_MERCHANTS_LIST_URL, *SIGNIN_URL, *SIGNOUT_URL;
-
-@property(nonatomic) NSString* token, *client, *apikey, *model;
- 
- sselect_receive_news
- 
-*/
-
-@property(nonatomic)NSString* SINDEX_URL, *STYPE_REGISTER_URL, *SSELECT_RECEIVE_NEWS,*SREGISTER_RECEIVE_NEWS_URL, *REGISTER_ACTIVITY_URL, *REGISTER_ACTIVITY_JOIN_URL, *SEND_ECARD_ONLINE_URL, *SEND_ECARD_ONLINE_SEND_URL, *EVENTS_CALENDAR_URL, *SEND_ECARD_ONLINE_SELECT_INSIDERS_URL, *SEARCH_CULTURE_URL, *SEARCH_CULTURE_RESULTSEARCH_URL, *EVENT_SEARCH, *EVENT_SEARCH_RESULT, *COMPLAINT/*scomplaint*/, *COMPLAINT_INPUTEMAIL/*scomplaint_inputemail.php*/, *FOLLOW_COMPLAINT /*FollowComplaint*/, *SSEND_ECARD_OUTSER/* ssend_ecard_outsider.php */; // Search_Culture_ResultSearch
+@property(nonatomic)NSString* LIST_ARTICLE;
+@property(nonatomic)NSString* ADD_ARTICLE;
+@property(nonatomic)NSString* EDIT_ARTICLE;
+@property(nonatomic)NSString* DELETE_ARTICLE;
 
 
-// SendEcardOnline_Select_InsidersThread SEND_ECARD_ONLINE_SELECT_INSIDERS_URL
+@property(nonatomic)NSString* DEVICE_PUSH_NOTIFICATION; 
 
 @end

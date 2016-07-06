@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "HJObjManager.h"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (strong, nonatomic) HJObjManager *obj_Manager;
 
 @end
 

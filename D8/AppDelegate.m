@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 
+#import <UIKit/UIKit.h>
+//#import <Parse/Parse.h>
+//#import <ParseUI/ParseUI.h>
+
 @interface AppDelegate ()
 
 @end
@@ -17,7 +21,45 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // Cache
+    NSString *documentdictionary;
+    NSArray *Path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    documentdictionary = [Path objectAtIndex:0];
+    documentdictionary = [documentdictionary stringByAppendingPathComponent:@"D8_cache/"];
+    self.obj_Manager = [[HJObjManager alloc] initWithLoadingBufferSize:6 memCacheSize:20];
+    
+    HJMOFileCache *fileCache = [[HJMOFileCache alloc] initWithRootPath:documentdictionary];
+    self.obj_Manager.fileCache=fileCache;
+    
+    fileCache.fileCountLimit=100;
+    fileCache.fileAgeLimit=60*60*24*7;
+    [fileCache trimCacheUsingBackgroundThread];
+    // Cache
+
     return YES;
+}
+
+#pragma mark Push Notifications
+/*
+ 'field_model_device'      => $json_array['model_device'],
+ 'field_name_device'       => $json_array['name_device'],
+ 'field_parse_id'          => $json_array['parse_id'],
+ 'field_system_version_device' => $json_array['system_version_device'],
+ 'field_uuid_device'       => $json_array['uuid_device'],
+ */
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
+    NSLog(@"%@", deviceToken);
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

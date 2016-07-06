@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 
 @interface RegisterViewController : UIViewController
+
+@property (nonatomic, strong) MBProgressHUD *hud;
+
+@property (weak, nonatomic) IBOutlet UITextField *txtEmail;
+@property (weak, nonatomic) IBOutlet UITextField *txtUsername;
+@property (weak, nonatomic) IBOutlet UITextField *txtPassword;
+
+- (IBAction)onRegister:(id)sender;
 
 @end

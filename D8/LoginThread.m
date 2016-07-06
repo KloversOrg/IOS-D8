@@ -8,6 +8,8 @@
 
 #import "LoginThread.h"
 
+#import "Configs.h"
+
 @implementation LoginThread
 
 -(void)start:(NSString *)username:(NSString *)password /*:(NSString *)parse_id*/
@@ -26,7 +28,7 @@
     // NSURL *url = [NSURL URLWithString:@"http://www.snee.com/xml/crud/posttest.cgi"];
     
     // http://localhost/test-parse/gen_qrcode.php?user=52So6zp2om
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@", @"http://192.168.1.101/api/user/login"]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",  [Configs sharedInstance].API_URL, [Configs sharedInstance].USER_LOGIN ]];
     
     //initialize a request from url
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[url standardizedURL]];
@@ -44,7 +46,7 @@
     // NSString *postData = [[NSString alloc] initWithString:@"fname=example&lname=example"];  username, password, parse_id
     
     // NSString *postData = [NSString stringWithFormat:@"username=%@&password=%@&parse_id=%@", username, password, parse_id];
-    NSString *postData = [NSString stringWithFormat:@"username=%@&password=%@", username, password];
+    // NSString *postData = [NSString stringWithFormat:@"username=%@&password=%@", username, password];
     
     //set request content type we MUST set this value.
     // [request setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
@@ -61,7 +63,6 @@
     
     [request setHTTPBody:_data];
 
-    
     //initialize a connection from request
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     self.connection = connection;
@@ -120,7 +121,7 @@
 //    }
    
     if (self.completionHandler) {
-        self.completionHandler(htmlSTR);
+        self.completionHandler(self.receivedData);
     }
 }
 @end

@@ -7,8 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoginViewController.h"
+#import "LogoutThread.h"
+#import "MBProgressHUD.h"
 
 @interface ViewController : UIViewController
+
+@property (nonatomic, strong) MBProgressHUD *hud;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnLogout;
+
+- (IBAction)onLogout:(id)sender;
+- (IBAction)onTest:(id)sender;
+
 
 
 @end

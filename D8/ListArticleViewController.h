@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ListArticleViewController : UIViewController
+@interface ListArticleViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *_table;
+
+@property (nonatomic, strong) UIActivityIndicatorView *spinner;
+
+@property (nonatomic) NSMutableArray *_data;
 
 @end
