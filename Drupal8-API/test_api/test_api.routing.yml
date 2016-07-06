@@ -1,0 +1,99 @@
+# Test API endpoints
+
+test_api.user_login:
+  path: 'my-api/user_login.json'
+  defaults: { _controller: '\Drupal\test_api\Controller\TestAPIController::user_login' }
+  methods:  [POST]
+  requirements:
+    _access: 'TRUE'
+
+test_api.user_register:
+  path: 'my-api/user_register.json'
+  defaults: { _controller: '\Drupal\test_api\Controller\TestAPIController::user_register' }
+  methods:  [POST]
+  requirements:
+    _access: 'TRUE'
+
+test_api.user_logout:
+  path: 'my-api/user_logout.json'
+  defaults: { _controller: '\Drupal\test_api\Controller\TestAPIController::user_logout' }
+  methods:  [POST]
+  requirements:
+    _access: 'TRUE'
+
+test_api.get:
+  path: 'my-api/get.json'
+  defaults: { _controller: '\Drupal\test_api\Controller\TestAPIController::get_example' }
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+
+test_api.put:
+  path: 'my-api/put.json'
+  defaults: { _controller: '\Drupal\test_api\Controller\TestAPIController::put_example' }
+  methods:  [PUT]
+  requirements:
+    _access: 'TRUE'
+
+#test_api.post:
+#  path: 'my-api/post.json'
+#  defaults: { _controller: '\Drupal\test_api\Controller\TestAPIController::post_example' }
+#  methods:  [POST]
+#  requirements:
+#    _access: 'TRUE'
+
+test_api.post:
+  path: 'my-api/posts.json'
+  defaults: { _controller: '\Drupal\test_api\Controller\TestAPIController::post_example' }
+  methods:  [POST]
+  requirements:
+    _access: 'TRUE'
+
+test_api.list_article:
+  path: 'my-api/list_article.json'
+  defaults: { _controller: '\Drupal\test_api\Controller\TestAPIController::list_article' }
+  methods:  [POST]
+  requirements:
+    _access: 'TRUE'
+
+#test_api.add_article:
+#  path: 'my-api/add_article.json'
+#  defaults: { _controller: '\Drupal\test_api\Controller\TestAPIController::add_article' }
+#  methods:  [POST]
+#  requirements:
+#    _access: 'TRUE'
+
+test_api.add_article:
+  path: 'my-api/add_article.json'
+  defaults: { _controller: '\Drupal\test_api\Controller\TestAPIController::add_article' }
+  methods:  [POST]
+  requirements:
+    _access: 'TRUE'
+
+test_api.edit_article:
+  path: 'my-api/edit_article.json'
+  defaults: { _controller: '\Drupal\test_api\Controller\TestAPIController::edit_article' }
+  methods:  [POST]
+  requirements:
+    _access: 'TRUE'
+
+test_api.delete_article:
+  path: 'my-api/delete_article.json'
+  defaults: { _controller: '\Drupal\test_api\Controller\TestAPIController::delete_article' }
+  methods:  [POST]
+  requirements:
+    _access: 'TRUE'
+
+test_api.device_push_notification:
+  path: 'my-api/device_push_notification.json'
+  defaults: { _controller: '\Drupal\test_api\Controller\TestAPIController::device_push_notification' }
+  methods:  [POST]
+  requirements:
+    _access: 'TRUE'
+
+test_api.delete:
+  path: 'my-api/delete.json'
+  defaults: { _controller: '\Drupal\test_api\Controller\TestAPIController::delete_example' }
+  methods:  [DELETE]
+  requirements:
+    _access: 'TRUE'
